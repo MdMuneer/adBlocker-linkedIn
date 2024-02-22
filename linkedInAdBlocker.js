@@ -1,0 +1,62 @@
+// function removeAds() {
+//   let spans = document.getElementsByTagName("span");
+
+//   spans.map((span) => {
+//     if (span.innerText === "Promoted") {
+//       // Get the div that wraps around the entire ad
+//       let card = spans[i].closest(".feed-shared-update-v2");
+
+//       if (card === null) {
+//         // Could also be card.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode :D
+//         let j = 0;
+//         card = spans[i];
+//         while (j < 6) {
+//           card = card.parentNode;
+//           ++j;
+//         }
+//       }
+
+//       // Remove the ad
+//       card.setAttribute("style", "display: none !important;");
+//     }
+//   });
+// }
+
+function removeAds() {
+  // Select all spans containing "Promoted" text
+  let spans = document.querySelectorAll("span");
+
+  // Iterate over each span
+  spans.forEach((span) => {
+    if (span.innerText === "Promoted") {
+        // We first use the closest method to find the nearest ancestor with the class feed-shared-update-v2. If it's not found (or if the class name changes in future updates), we then attempt to get the 6th parent element, assuming it's the equivalent container for the ad.
+        
+      // Find the closest ancestor element with the class "feed-shared-update-v2"
+      let card = span.closest(".feed-shared-update-v2");
+
+      // If not found, attempt to find the parent div up to 6 levels
+      if (card === null) {
+        let parentNode = span.parentNode;
+        for (let i = 0; i < 6 && parentNode !== null; i++) {
+          if (parentNode.classList.contains("feed-shared-update-v2")) {
+            card = parentNode;
+            break;
+          }
+          parentNode = parentNode.parentNode;
+        }
+      }
+
+
+      // If the ad container is found, hide it
+      if (card) {
+        card.style.display = "none";
+      }
+    }
+  });
+}
+
+// Initially remove ads
+removeAds();
+
+// Periodically check for and remove ads every 100 milliseconds
+setInterval(removeAds, 100);

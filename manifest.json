@@ -1,0 +1,13 @@
+{
+  "manifest_version": 2,
+  "name": "AdBlocker LinkedIn",
+  "version": "1.0",
+  "description": "Block annoying ads on LinkedIn",
+  "permissions": ["tabs", "webNavigation", "https://www.linkedin.com/"],
+  "background": {
+    "scripts": ["extension.js"]
+  },
+  "browser_action": {
+    "default_title": "LinkedIn AdBlocker"
+  }
+}
