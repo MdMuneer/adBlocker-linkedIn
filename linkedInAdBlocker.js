@@ -1,27 +1,3 @@
-// function removeAds() {
-//   let spans = document.getElementsByTagName("span");
-
-//   spans.map((span) => {
-//     if (span.innerText === "Promoted") {
-//       // Get the div that wraps around the entire ad
-//       let card = spans[i].closest(".feed-shared-update-v2");
-
-//       if (card === null) {
-//         // Could also be card.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode :D
-//         let j = 0;
-//         card = spans[i];
-//         while (j < 6) {
-//           card = card.parentNode;
-//           ++j;
-//         }
-//       }
-
-//       // Remove the ad
-//       card.setAttribute("style", "display: none !important;");
-//     }
-//   });
-// }
-
 function removeAds() {
   // Select all spans containing "Promoted" text
   let spans = document.querySelectorAll("span");
