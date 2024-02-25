@@ -3,7 +3,6 @@ function removeAds() {
   // Select all spans containing "Promoted" text
   let spans = document.querySelectorAll("span");
 
-  // Iterate over each span
   spans.forEach((span) => {
     if (span.innerText === "Promoted" || span.innerText === "Suggested") {
       // We first use the closest method to find the nearest ancestor with the class feed-shared-update-v2. If it's not found (or if the class name changes in future updates), we then attempt to get the 6th parent element, assuming it's the equivalent container for the ad.
