@@ -1,6 +1,4 @@
 function removeAds() {
-  console.log("Removing ads...");
-  // Select all spans containing "Promoted" text
   let spans = document.querySelectorAll("span");
 
   spans.forEach((span) => {
@@ -35,7 +33,6 @@ removeAds();
 
 // Function to remove ads when the user scrolls for the first time
 function removeAdsOnScroll() {
-
   removeAds();
 
   // Remove the scroll event listener after the initial scroll
