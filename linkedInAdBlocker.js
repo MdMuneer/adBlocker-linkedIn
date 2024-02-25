@@ -31,12 +31,12 @@ function removeAds() {
   });
 }
 
-// // Initially remove ads
+// Initially remove ads
 removeAds();
 
 // Function to remove ads when the user scrolls for the first time
 function removeAdsOnScroll() {
-  // Remove ads
+
   removeAds();
 
   // Remove the scroll event listener after the initial scroll
