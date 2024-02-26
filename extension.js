@@ -1,4 +1,3 @@
-// Event listener for web navigation
 chrome.webNavigation.onCompleted.addListener(
     function (details) {
       // Check if the loaded page is from LinkedIn
